@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Sky-shop React App
 
 This project was made for a recruitment quest
 
