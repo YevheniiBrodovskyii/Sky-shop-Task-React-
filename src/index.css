@@ -72,3 +72,19 @@ nav {
   top: 15px;
   left: 10px;
 }
+
+.sort_title {
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sort_container{
+  padding:0 20px 10px 20px;
+  background-color: rgb(197, 226, 197);
+  border-radius: 20px;
+}
+
+.sort_container span {
+  color: black;
+}

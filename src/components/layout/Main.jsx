@@ -1,6 +1,7 @@
 import React from "react";
 import { Products } from "../Products";
 import { Filter } from "../Filter";
+import { Product } from "../Product";
 
 class Main extends React.Component {
   state = {
@@ -13,10 +14,13 @@ class Main extends React.Component {
       .then((data) => this.setState({ products: Object.values(data) }));
   }
 
-  filterProducts = (type = "all") => {
-    fetch("./products.json")
-      .then((responce) => responce.json())
-      .then((data) => this.setState({ products: Object.values(data) }));
+  productFilter = (type = "all") => {
+    const selected = [];
+    return this.state.products.map((product) => {
+      if (product.prod_status.contains(type)) {
+        selected.push(product);
+      }
+    });
   };
 
   render() {
