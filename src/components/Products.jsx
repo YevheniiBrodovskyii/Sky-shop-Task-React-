@@ -1,20 +1,19 @@
-import {Product} from './Product';
+import { Product } from "./Product";
 
-function Products (props) {
+function Products(props) {
+  const { products = [] } = props;
 
-    const {products = []} = props;
-
-    return (
-    
+  return (
     <div className="products">
-        {products.length ? (
-        products.map((product) => <Product key={product.prod_id} {...product} />)
-        ) : (
-            <h4>Nothing found</h4>
-        )}
+      {products.length ? (
+        products.map((product) => (
+          <Product key={product.prod_id} {...product} />
+        ))
+      ) : (
+        <h4>Nothing found</h4>
+      )}
     </div>
-    );
-
+  );
 }
 
-export {Products}
+export { Products };

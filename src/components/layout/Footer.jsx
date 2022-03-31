@@ -1,6 +1,6 @@
 function Footer() {
 
-    return <footer className="page-footer #01579b light-blue darken-4">
+    return <footer className="page-footer #01579b layout-color">
     <div className="footer-copyright">
       <div className="container">
       © {new Date().getFullYear()} Developed by Yevhenii Brodovskyi

@@ -1,5 +1,5 @@
 function Header() {
-    return  <nav className="#01579b light-blue darken-4">
+    return  <nav className="#01579b layout-color">
         <div className="nav-wrapper">
         <a href="#" className="brand-logo">Sky-shop</a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
