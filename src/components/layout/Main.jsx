@@ -1,13 +1,12 @@
 import React from "react";
 import { Products } from "../Products";
 import { Filter } from "../Filter";
-import { Product } from "../Product";
 
 class Main extends React.Component {
   state = {
     products: [],
     filteredProducts: [],
-    status: "all",
+    status: "recommended",
   };
 
   onFilterStatusChange = (status) => {
@@ -23,7 +22,7 @@ class Main extends React.Component {
   filterProducts() {
     this.setState(({ status }) => ({
       filteredProducts:
-        status === "all"
+        status === "recommended"
           ? this.state.products
           : this.state.products.filter((n) => n.prod_status.includes(status)),
     }));
@@ -36,13 +35,11 @@ class Main extends React.Component {
   }
 
   render() {
-    // const { products } = this.state;
-
     return (
       <main className="container content">
         <Filter
-          title="Status:"
-          values={["all", "recommended", "saleout", "bestseller", "new"]}
+          title="Sortować według:"
+          values={["recommended", "promotion", "saleout", "bestseller", "new"]}
           value={this.state.status}
           onChange={this.onFilterStatusChange}
         />

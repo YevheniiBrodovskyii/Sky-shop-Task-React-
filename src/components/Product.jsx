@@ -1,3 +1,5 @@
+import statusMap from "../statusMap";
+
 function Product(props) {
   const {
     prod_id: id,
@@ -6,13 +8,6 @@ function Product(props) {
     prod_price: price,
     prod_oldprice: oldPrice,
   } = props;
-
-  var statusMap = new Map();
-  statusMap.set("new", "Nowość");
-  statusMap.set("promotion", "Promocja");
-  statusMap.set("bestseller", "Bestseller");
-  statusMap.set("recommended", "Rekomendowane");
-  statusMap.set("saleout", "Wyprzedaż");
 
   let oldPriceChecker = (oldPriceValue) => {
     if (oldPriceValue) {

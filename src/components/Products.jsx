@@ -10,7 +10,7 @@ function Products(props) {
           <Product key={product.prod_id} {...product} />
         ))
       ) : (
-        <h4>Nothing found</h4>
+        <h4 className="products_error">Nothing found</h4>
       )}
     </div>
   );
