@@ -6,6 +6,12 @@ import { Product } from "../Product";
 class Main extends React.Component {
   state = {
     products: [],
+    filteredProducts: [],
+    status: "all",
+  };
+
+  onFilterStatusChange = (status) => {
+    this.setState({ status });
   };
 
   componentDidMount() {
@@ -14,22 +20,33 @@ class Main extends React.Component {
       .then((data) => this.setState({ products: Object.values(data) }));
   }
 
-  productFilter = (type = "all") => {
-    const selected = [];
-    return this.state.products.map((product) => {
-      if (product.prod_status.contains(type)) {
-        selected.push(product);
-      }
-    });
-  };
+  filterProducts() {
+    this.setState(({ status }) => ({
+      filteredProducts:
+        status === "all"
+          ? this.state.products
+          : this.state.products.filter((n) => n.prod_status.includes(status)),
+    }));
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.status !== prevState.status) {
+      this.filterProducts();
+    }
+  }
 
   render() {
-    const { products } = this.state;
+    // const { products } = this.state;
 
     return (
       <main className="container content">
-        <Filter />
-        <Products products={products} />
+        <Filter
+          title="Status:"
+          values={["all", "recommended", "saleout", "bestseller", "new"]}
+          value={this.state.status}
+          onChange={this.onFilterStatusChange}
+        />
+        <Products products={this.state.filteredProducts} />
       </main>
     );
   }
