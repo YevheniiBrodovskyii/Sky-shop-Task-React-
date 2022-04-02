@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Sky-shop-Task-React-/static/css/main.e85bb369.css",
+    "main.js": "/Sky-shop-Task-React-/static/js/main.9b8a82ef.js",
+    "index.html": "/Sky-shop-Task-React-/index.html",
+    "main.e85bb369.css.map": "/Sky-shop-Task-React-/static/css/main.e85bb369.css.map",
+    "main.9b8a82ef.js.map": "/Sky-shop-Task-React-/static/js/main.9b8a82ef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e85bb369.css",
+    "static/js/main.9b8a82ef.js"
+  ]
+}
