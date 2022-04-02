@@ -1,8 +1,8 @@
 import statusMap from "../statusMap";
 
-const Filter = ({ title, values, value, onChange }) => (
+const Filter = ({ values, value, onChange }) => (
   <div className="row filter_container">
-    <h3 className="filter_title">{title}</h3>
+    <h3 className="filter_title">Sortować według</h3>
     <div className="filter_wrapper">
       {values.map((n) => (
         <label>

@@ -34,7 +34,7 @@ function Product(props) {
     <div className="row">
       <div className="card">
         <div className="card-image">
-          <img src="https://via.placeholder.com/150" />
+          <img src="https://via.placeholder.com/150" key={id} />
           <div className="status_container">{statusChecker(status)}</div>
         </div>
         <div className="card-content">

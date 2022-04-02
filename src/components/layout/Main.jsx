@@ -6,7 +6,7 @@ class Main extends React.Component {
   state = {
     products: [],
     filteredProducts: [],
-    status: "recommended",
+    status: "all",
   };
 
   onFilterStatusChange = (status) => {
@@ -22,14 +22,17 @@ class Main extends React.Component {
   filterProducts() {
     this.setState(({ status }) => ({
       filteredProducts:
-        status === "recommended"
+        status === "all"
           ? this.state.products
-          : this.state.products.filter((n) => n.prod_status.includes(status)),
+          : this.state.products.filter((n) => n.prod_status?.includes(status)),
     }));
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.status !== prevState.status) {
+    if (
+      this.state.status !== prevState.status ||
+      this.state.products !== prevState.products
+    ) {
       this.filterProducts();
     }
   }
@@ -38,8 +41,14 @@ class Main extends React.Component {
     return (
       <main className="container content">
         <Filter
-          title="Sortować według:"
-          values={["recommended", "promotion", "saleout", "bestseller", "new"]}
+          values={[
+            "all",
+            "recommended",
+            "promotion",
+            "saleout",
+            "bestseller",
+            "new",
+          ]}
           value={this.state.status}
           onChange={this.onFilterStatusChange}
         />
