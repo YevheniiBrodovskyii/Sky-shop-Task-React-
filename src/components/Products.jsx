@@ -6,9 +6,7 @@ function Products(props) {
   return (
     <div className="products">
       {products.length ? (
-        products.map((product) => (
-          <Product key={product.prod_id} {...product} />
-        ))
+        products.map((product, id) => <Product key={id} {...product} />)
       ) : (
         <h4 className="products_error">Nothing found</h4>
       )}

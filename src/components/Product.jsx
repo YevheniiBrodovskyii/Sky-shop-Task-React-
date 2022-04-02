@@ -2,7 +2,6 @@ import statusMap from "../statusMap";
 
 function Product(props) {
   const {
-    prod_id: id,
     prod_name: title,
     prod_status: status,
     prod_price: price,
@@ -19,14 +18,18 @@ function Product(props) {
   };
 
   let statusChecker = (value) => {
-    if (value != undefined && value != "") {
+    if (value !== undefined && value !== "") {
       let string = value;
       let array = string.split(",");
       for (let i = 0; i < array.length; i++) {
         array[i] = statusMap.get(array[i]);
       }
 
-      return array.map((n) => <div className="status">{n}</div>);
+      return array.map((n) => (
+        <div key={n} className="status">
+          {n}
+        </div>
+      ));
     }
   };
 
@@ -34,7 +37,7 @@ function Product(props) {
     <div className="row">
       <div className="card">
         <div className="card-image">
-          <img src="https://via.placeholder.com/150" key={id} />
+          <img src="https://via.placeholder.com/150" alt="placeholder" />
           <div className="status_container">{statusChecker(status)}</div>
         </div>
         <div className="card-content">

@@ -87,14 +87,8 @@ nav {
   border-radius: 20px;
 }
 
-.filter_wrapper {
-  display: flex;
-  justify-content:space-between ;
-}
-
-.filter_container span {
-  color: black;
-  padding-left: 25px !important;
+.status_select {
+  display: block;
 }
 
 .products_error {
@@ -123,15 +117,6 @@ nav {
     padding:0 20px 10px 20px;
     background-color: rgb(197, 226, 197);
     border-radius: 20px;
-  }
-
-}
-
-@media (max-width: 690px) {
-
-  .filter_wrapper {
-    display: block;
-    text-align: center;
   }
 
 }

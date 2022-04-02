@@ -50,7 +50,7 @@ class Main extends React.Component {
             "new",
           ]}
           value={this.state.status}
-          onChange={this.onFilterStatusChange}
+          onFilterChange={this.onFilterStatusChange}
         />
         <Products products={this.state.filteredProducts} />
       </main>
