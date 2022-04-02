@@ -8,5 +8,5 @@ The task is to display the list of products in HTML using Ajax to the products.j
 
 ### About development
 
-# The project was made on React 18.0.0
-# I also used framework ["Materialize"](https://materializecss.com/) for faster styling and responsiveness
+#### The project was made on React 18.0.0
+#### I also used framework ["Materialize"](https://materializecss.com/) for faster styling and responsiveness
